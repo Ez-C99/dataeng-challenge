@@ -10,24 +10,30 @@ if __name__ =="__main__":
             case '1':
                 offences = dp.count_offences(data)
                 print("Top 10 Offences: ")
-                print(sorted(offences.items(), key=lambda x: x[1], reverse=True)[:10])
+                print(sorted(offences.items(), key=lambda x: x[1], reverse=True)[:10] + "\n")
             case '2':
                 age_pd_cd = dp.arrest_count_age_pd_cd(data)
-                print("Arrests by Age and PD Code: ")
+                print("Fourth greatest number of arrests by PD_CD for each age group: ")
+                fourth_highest = {}
                 for age, pd_dict in age_pd_cd.items():
-                    print(f"Age Group: {age}")
-                    print(sorted(pd_dict.items(), key=lambda x: x[1], reverse=True)[3])
+                    # print(f"Age Group: {age}")
+                    # print(sorted(pd_dict.items(), key=lambda x: x[1], reverse=True)[3])
+                    sorted_arrests = sorted(pd_dict.items(), key=lambda x: x[1], reverse=True)
+                    if len(sorted_arrests) >= 4:
+                        fourth_highest[age] = sorted_arrests[3]
+                print(f"Age Group: {age}")
+                print(fourth_highest[age] + "\n")
             case '3':
                 offence_desc = ui.get_offence_desc()
                 filtered_data = dp.filter_by_offence(data, offence_desc)
                 if filtered_data:
-                    dp.export_to_csv(filtered_data, f"{offence_desc}.csv")
+                    dp.export_to_csv(filtered_data, f"{offence_desc}.csv" + "\n")
                 else:
-                    print("No data available for this description")
+                    print("No data available for this description" + "\n")
             case '4':
                 db_ops.create_db_and_table()
                 db_ops.insert_in_db(data)
             case '5':
                 break
             case _:
-                print('Unrecognised option')
+                print('Unrecognised option' + "\n")
