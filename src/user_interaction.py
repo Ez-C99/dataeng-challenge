@@ -6,25 +6,19 @@ Actions:
 4. Allow user input to run all of your script, or specific sections
 
 Requirements:
-3. Export to a csv file containing user specified OFNS_DESC. For example, a user can specify full or part of an offence - 'ASSAULT' or 'ASSAULT 3' or 'ASSAULT 3 & RELATED'. Export the result to a csv file.
 
 """
 
 import csv
 
 
-def get_user_input(prompt):
+def get_user_input():
     """Get user input"""
-    return input(prompt)
+    print("Choose an option:")
+    print("1. View Top 10 Offenses")
+    print("2. View Arrests by Age and PD Code")
+    print("3. Export Data to CSV")
+    print("4. Import Data to SQLite DB")
+    print("5. Quit")
+    return input()
 
-def filter_offences_by_input(counter, input):
-    """Filter offences by user input"""
-    return {k: v for k, v in counter.items() if input.lower() in k.lower()}
-
-def export_to_csv(data, file_path):
-    """Export data to a .csv file"""
-    with open(file_path, mode='w', newline=' ') as f:
-        writer = csv.writer(f)
-        writer.writerow(['Offence Description', 'Count'])
-        for k, v in data.items():
-            writer.writerow([k, v])
