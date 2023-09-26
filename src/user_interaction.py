@@ -22,3 +22,5 @@ def get_user_input():
     print("5. Quit")
     return input()
 
+def get_offence_desc():
+    return input("Enter the full or partial offence description: ")

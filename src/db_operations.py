@@ -13,8 +13,14 @@ def create_db_and_table(db_name):
     """Create SQLite database and table"""
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
-    c.execute('''CREATE TABLE IF NOT EXISTS arrests
-                 (OFNS_DESC TEXT, AGE_GROUP TEXT, PD_CD TEXT)''')
+    c.execute('''
+        CREATE TABLE arrests (
+            ARREST_KEY INTEGER PRIMARY KEY,
+            AGE_GROUP TEXT,
+            PD_CD TEXT,
+            OFNS_DESC TEXT
+        )
+    ''')
     conn.commit()
     conn.close()
 
@@ -23,7 +29,7 @@ def insert_in_db(data, db_name):
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
     for row in data:
-        c.execute("INSERT INTO arrests (OFNS_DESC, AGE_GROUP, PD_CD) VALUES (?, ?, ?)",
-                  (row['OFNS_DESC'], row['AGE_GROUP'], row['PD_CD']))
+        c.execute("INSERT INTO arrests (ARREST_KEY, AGE_GROUP, PD_CD, OFNS_DESC) VALUES (?, ?, ?, ?)",
+                  (row['ARREST_KEY'], row['AGE_GROUP'], row['PD_CD'], row['OFNS_DESC']))
     conn.commit()
     conn.close()
