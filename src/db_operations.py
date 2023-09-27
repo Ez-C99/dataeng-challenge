@@ -15,6 +15,11 @@ def create_db_and_table(db_name):
     full_path = f'{EXPORT_FOLDER}{db_name}'
     conn = sqlite3.connect(full_path)
     c = conn.cursor()
+
+    # Drop the existing table if it exists so table creation capabilities are always demonstrated
+    c.execute('DROP TABLE IF EXISTS arrests')
+
+    # Create new table
     c.execute('''
         CREATE TABLE arrests (
             ARREST_KEY INTEGER PRIMARY KEY,

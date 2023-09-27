@@ -29,7 +29,8 @@ For deeper insight, see the Requirements section of the challenge brief below, f
 
 ## Testing
 Run the command:
-```python -m unittest discover```
+```python -m unittest discover``` and add `-v` for verbose (more in-depth) testing information.
+
 
 <br>
 <br>
