@@ -28,6 +28,7 @@ if __name__ =="__main__":
                 else:
                     print("No data available for this description" + "\n")
             case '4':
+                db_name = "nypd_arrests.db"
                 db_ops.create_db_and_table()
                 db_ops.insert_in_db(data)
             case '5':
