@@ -1,3 +1,37 @@
+# Ezra Chamba Not On the High Street Data Engineering Code Challenge Submission
+
+## Description
+A coding challenge that tests the proficiency in data engineering tasks such as data reading, transformation, and output in Python.
+
+## Requirements
+Python 3.x
+
+## Libraries
+Python's standard library with no external libraries.
+
+## Installation and Setup
+1. Clone the repository: `git clone https://github.com/Ez-C99/dataeng-challenge`.
+2. Navigate into the project directory: `cd dataeng=challenge`.
+3. Run the main script to interact with the functionalities: `python main.py`.
+
+### Note for `requirements.txt`
+The file was only included to demonstrate best practices. Since the project uses Python's standard library, there's no need to install requirements as you typically would using `pip install -r requirements.txt`.
+
+## Usage
+Run `main.py` and follow the terminal prompts, confirming choices with the ENTER button.
+
+## Features
+For deeper insight, see the Requirements section of the challenge brief below, from Not On the High Street.
+1. View Top 10 Offences.
+2. View 4th Most Arrests by PD Code for each Age Group.
+3. Export Data to CSV.
+4. Import Data to SQLite DB.
+
+## Testing
+Run the command:
+```python -m unittest discover```
+
+
 # Not On the High Street Data Engineering Code Challenge
 
 # 
