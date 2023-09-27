@@ -8,10 +8,12 @@ Requirements:
 """
 
 import sqlite3
+from constants import EXPORT_FOLDER
 
 def create_db_and_table(db_name):
     """Create SQLite database and table to store arrests"""
-    conn = sqlite3.connect(db_name)
+    full_path = f'{EXPORT_FOLDER}{db_name}'
+    conn = sqlite3.connect(full_path)
     c = conn.cursor()
     c.execute('''
         CREATE TABLE arrests (
@@ -26,7 +28,8 @@ def create_db_and_table(db_name):
 
 def insert_in_db(data, db_name):
     """Insert data in SQLite database"""
-    conn = sqlite3.connect(db_name)
+    full_path = f'{EXPORT_FOLDER}{db_name}'
+    conn = sqlite3.connect(full_path)
     c = conn.cursor()
     for row in data:
         c.execute("INSERT INTO arrests (ARREST_KEY, AGE_GROUP, PD_CD, OFNS_DESC) VALUES (?, ?, ?, ?)",

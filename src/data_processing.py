@@ -18,7 +18,7 @@ Requirements:
 
 import csv
 from collections import Counter
-
+from constants import EXPORT_FOLDER
 
 def read_csv(file_path):
     """Read .csv file and return data as dicitonary list"""
@@ -52,7 +52,8 @@ def filter_by_offence(data, offence_desc):
 def export_to_csv(data, file_path):
     """Export data to a .csv file"""
     keys = data[0].keys()
-    with open(file_path, mode='w', newline='') as f:
+    complete_file_path = f"{EXPORT_FOLDER}{file_path}"
+    with open(complete_file_path, mode='w', newline='') as f:
         dict_writer = csv.DictWriter(f, fieldnames=keys)
         dict_writer.writeheader()
         dict_writer.writerows(data)

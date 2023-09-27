@@ -18,7 +18,7 @@ if __name__ == '__main__':
             # Count offences and show top 10
             case '1':
                 offences = dp.count_offences(data)
-                print("Top 10 Offences: ")
+                print("\nTop 10 Offences: ")
                 print(sorted(offences.items(), key=lambda x: x[1], reverse=True)[:10])
             
             # Show 4th greatest number of arrests by PD_CD for each age group
