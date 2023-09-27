@@ -49,10 +49,10 @@ def filter_by_offence(data, offence_desc):
     """Filter offences by user input"""
     return [row for row in data if offence_desc.lower() in row['OFNS_DESC'].lower()]
 
-def export_to_csv(data, file_path):
+def export_to_csv(data, file_name):
     """Export data to a .csv file"""
     keys = data[0].keys()
-    complete_file_path = f"{EXPORT_FOLDER}{file_path}"
+    complete_file_path = f"{EXPORT_FOLDER}/{file_name}"
     with open(complete_file_path, mode='w', newline='') as f:
         dict_writer = csv.DictWriter(f, fieldnames=keys)
         dict_writer.writeheader()

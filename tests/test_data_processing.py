@@ -1,6 +1,13 @@
+import sys
 import os
 import unittest
-from src import data_processing as dp
+import tempfile
+import shutil
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
+
+import data_processing as dp
+from constants import EXPORT_FOLDER
 
 
 class TestDataProcessingFunctions(unittest.TestCase):
@@ -57,6 +64,12 @@ class TestDataProcessingFunctions(unittest.TestCase):
         result = dp.filter_by_offence(data, 'ASSAULT')
         self.assertEqual(len(result), 2)
 
+    def setUp(self):
+        self.test_dir = tempfile.mkdtemp()
+
+    def tearDown(self):
+        shutil.rmtree(self.test_dir)
+
     def test_export_to_csv(self):
         """
         Test that the export_to_csv function correctly exports data to a CSV file.
@@ -68,8 +81,7 @@ class TestDataProcessingFunctions(unittest.TestCase):
             {'OFNS_DESC': 'ASSAULT 1'},
             {'OFNS_DESC': 'ASSAULT 2'},
         ]
-        dp.export_to_csv(data, 'test_export.csv')
-        read_data = dp.read_csv('test_export.csv')
+        test_file_name = "test_export.csv"
+        dp.export_to_csv(data, test_file_name)
+        read_data = dp.read_csv(f"{EXPORT_FOLDER}/{test_file_name}")
         self.assertEqual(len(read_data), 2)
-        # Delete test file to remove residual files if required
-        # os.remove('test_export.csv')
