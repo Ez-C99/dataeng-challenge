@@ -10,7 +10,7 @@ Requirements:
 import sqlite3
 
 def create_db_and_table(db_name):
-    """Create SQLite database and table"""
+    """Create SQLite database and table to store arrests"""
     conn = sqlite3.connect(db_name)
     c = conn.cursor()
     c.execute('''

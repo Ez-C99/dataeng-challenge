@@ -11,15 +11,15 @@ import csv
 
 
 def get_user_input():
-    """Get user input of option choice"""
-    print("Choose an option:")
+    """Get user input of main menu choice"""
+    print("\n Choose an option:")
     print("1. View Top 10 Offenses")
-    print("2. View Arrests by Age and PD Code")
+    print("2. View 4th Most Arrests by PD Code for each Age Group")
     print("3. Export Data to CSV")
     print("4. Import Data to SQLite DB")
     print("5. Quit \n")
     return input()
 
 def get_offence_desc():
-    """Get uer input of offence"""
+    """Get user input of offence description"""
     return input("\n Enter the full or partial offence description: ")

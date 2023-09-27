@@ -33,7 +33,7 @@ def count_offences(data):
     return Counter(offence_desc)
 
 def arrest_count_age_pd_cd(data):
-    """Count arrests grouped by age group and PD_CD"""
+    """Create dictionary to map age group to arrest count by PD_CD"""
     age_code_dict = {}
     for row in data:
         age_group = row['AGE_GROUP']
