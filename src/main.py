@@ -16,13 +16,10 @@ if __name__ =="__main__":
                 print("Fourth greatest number of arrests by PD_CD for each age group: ")
                 fourth_highest = {}
                 for age, pd_dict in age_pd_cd.items():
-                    # print(f"Age Group: {age}")
-                    # print(sorted(pd_dict.items(), key=lambda x: x[1], reverse=True)[3])
                     sorted_arrests = sorted(pd_dict.items(), key=lambda x: x[1], reverse=True)
                     if len(sorted_arrests) >= 4:
                         fourth_highest[age] = sorted_arrests[3]
-                print(f"Age Group: {age}")
-                print(fourth_highest[age] + "\n")
+                print(fourth_highest)  # Prints all the fourth highest arrests by age group
             case '3':
                 offence_desc = ui.get_offence_desc()
                 filtered_data = dp.filter_by_offence(data, offence_desc)

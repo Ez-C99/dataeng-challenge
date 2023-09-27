@@ -17,9 +17,9 @@ def get_user_input():
     print("2. View Arrests by Age and PD Code")
     print("3. Export Data to CSV")
     print("4. Import Data to SQLite DB")
-    print("5. Quit")
+    print("5. Quit \n")
     return input()
 
 def get_offence_desc():
     """Get uer input of offence"""
-    return input("Enter the full or partial offence description: ")
+    return input("\n Enter the full or partial offence description: ")
