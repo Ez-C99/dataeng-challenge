@@ -11,7 +11,7 @@ Python's standard library with no external libraries.
 
 ## Installation and Setup
 1. Clone the repository: `git clone https://github.com/Ez-C99/dataeng-challenge`.
-2. Navigate into the project directory: `cd dataeng=challenge`.
+2. Navigate into the project directory: `cd dataeng-challenge`.
 3. Run the main script to interact with the functionalities: `python main.py`.
 
 ### Note for `requirements.txt`
@@ -31,6 +31,7 @@ For deeper insight, see the Requirements section of the challenge brief below, f
 Run the command:
 ```python -m unittest discover```
 
+<br>
 
 # Not On the High Street Data Engineering Code Challenge
 
