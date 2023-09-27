@@ -32,15 +32,8 @@ def count_offences(data):
     offence_desc = [row['OFNS_DESC'] for row in data]
     return Counter(offence_desc)
 
-# def sort_offence_desc(counter):
-#     """Sort offences in descending order"""
-#     return counter.most_common()
-
-# def get_top_ten_offences(sorted_offences):
-#     """Get top first 10 items of a sorted offence list"""
-#     return sorted_offences[:10]
-
 def arrest_count_age_pd_cd(data):
+    """Count arrests grouped by age group and PD_CD"""
     age_code_dict = {}
     for row in data:
         age_group = row['AGE_GROUP']
@@ -52,23 +45,14 @@ def arrest_count_age_pd_cd(data):
         age_code_dict[age_group][pd_code] += 1
     return age_code_dict
 
-# def fourth_greatest_arrests(counter):
-#     """Fourth highest arrest count for an age group by PD_CD"""
-#     fourth_highest = {}
-#     for age_group, pd_cd_count in counter.items():
-#         sorted_counts = sorted(pd_cd_count.items(), key=lambda x: x[1], reverse=True)
-#         if len(sorted_counts) >= 4:
-#             fourth_highest[age_group] = sorted_counts[3]
-#     return fourth_highest
-
 def filter_by_offence(data, offence_desc):
     """Filter offences by user input"""
     return [row for row in data if offence_desc.lower() in row['OFNS_DESC'].lower()]
 
 def export_to_csv(data, file_path):
     """Export data to a .csv file"""
-    with open(file_path, mode='w', newline=' ') as f:
-        writer = csv.writer(f)
-        writer.writerow(['Offence Description', 'Count'])
-        for k, v in data.items():
-            writer.writerow([k, v])
+    keys = data[0].keys()
+    with open(file_path, mode='w', newline='') as f:
+        dict_writer = csv.DictWriter(f, fieldnames=keys)
+        dict_writer.writeheader()
+        dict_writer.writerows(data)
