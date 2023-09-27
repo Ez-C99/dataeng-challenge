@@ -11,14 +11,15 @@ Python's standard library with no external libraries.
 
 ## Installation and Setup
 1. Clone the repository: `git clone https://github.com/Ez-C99/dataeng-challenge`.
-2. Navigate into the project directory: `cd dataeng-challenge`.
-3. Run the main script to interact with the functionalities: `python main.py`.
+2. Navigate into the main project directory folder: `cd /dataeng-challenge`.
+3. Navigate to the `/src` folder: `cd src`
+4. Run the main script to interact with the functionalities: `python3 main.py`.
 
 ### Note for `requirements.txt`
 The file was only included to demonstrate best practices. Since the project uses Python's standard library, there's no need to install requirements as you typically would using `pip install -r requirements.txt`.
 
 ## Usage
-Run `main.py` and follow the terminal prompts, confirming choices with the ENTER button.
+1. Run the main script using the instructions from installation ans setup (above) then follow the terminal prompts, confirming choices with the ENTER button.
 
 ## Features
 For deeper insight, see the Requirements section of the challenge brief below, from Not On the High Street.
@@ -28,7 +29,7 @@ For deeper insight, see the Requirements section of the challenge brief below, f
 4. Import Data to SQLite DB.
 
 ## Testing
-Run the command:
+From the main project directory, run the command:
 ```python -m unittest discover``` and add `-v` for verbose (more in-depth) testing information.
 
 

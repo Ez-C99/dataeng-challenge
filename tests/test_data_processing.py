@@ -66,6 +66,8 @@ class TestDataProcessingFunctions(unittest.TestCase):
 
     def setUp(self):
         self.test_dir = tempfile.mkdtemp()
+        if not os.path.exists(EXPORT_FOLDER):
+            os.makedirs(EXPORT_FOLDER)
 
     def tearDown(self):
         shutil.rmtree(self.test_dir)
@@ -83,5 +85,5 @@ class TestDataProcessingFunctions(unittest.TestCase):
         ]
         test_file_name = "test_export.csv"
         dp.export_to_csv(data, test_file_name)
-        read_data = dp.read_csv(f"{EXPORT_FOLDER}/{test_file_name}")
+        read_data = dp.read_csv(f"{EXPORT_FOLDER}{test_file_name}")
         self.assertEqual(len(read_data), 2)

@@ -6,7 +6,7 @@ import db_operations as db_ops
 if __name__ == '__main__':
 
     # Read data from .csv to dictionary list
-    data = dp.read_csv('data/nypd-arrest-data-2018-1.csv')
+    data = dp.read_csv('../data/nypd-arrest-data-2018-1.csv')
     
     # Endless option loop unless break oprtion to quit
     while True:

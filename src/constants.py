@@ -1,1 +1,1 @@
-EXPORT_FOLDER = './exports/'
+EXPORT_FOLDER = '../exports/'

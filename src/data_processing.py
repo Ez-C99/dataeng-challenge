@@ -16,6 +16,7 @@ Requirements:
 
 """
 
+import os
 import csv
 from collections import Counter
 from constants import EXPORT_FOLDER
@@ -51,6 +52,8 @@ def filter_by_offence(data, offence_desc):
 
 def export_to_csv(data, file_name):
     """Export data to a .csv file"""
+    if not os.path.exists(EXPORT_FOLDER):
+        os.makedirs(EXPORT_FOLDER)
     keys = data[0].keys()
     complete_file_path = f"{EXPORT_FOLDER}/{file_name}"
     with open(complete_file_path, mode='w', newline='') as f:
