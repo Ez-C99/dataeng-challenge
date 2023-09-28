@@ -4,7 +4,7 @@
 A coding challenge that tests the proficiency in data engineering tasks such as data reading, transformation, and output in Python.
 
 ## Requirements
-Python 3.x
+Python 3.10 
 
 ## Libraries
 Python's standard library with no external libraries.
