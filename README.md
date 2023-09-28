@@ -27,6 +27,9 @@ For deeper insight, see the Requirements section of the challenge brief below, f
 3. Export Data to CSV.
 4. Import Data to SQLite DB.
 
+### Export notes
+All exports including that od Features 3 and 4 and all testing data appear in in the `/exports` folder. In a few select environments, you may need to exit the run of `main.py` if you can't see them.
+
 ## Testing
 From the main directory of `/dataeng-challenge`, run the command:
 ```python -m unittest discover``` and add `-v` for verbose (more in-depth) testing information.
